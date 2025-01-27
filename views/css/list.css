@@ -1,0 +1,191 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fonte moderna */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #8e44ad, #3498db);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+/* Título */
+h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Container para as tarefas (Grid) */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Card de tarefa */
+.task-item {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* Necessário para o posicionamento absoluto dos botões */
+    height: 250px; /* Definindo altura fixa para o card */
+}
+
+/* Efeito de hover no card */
+.task-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Título da tarefa */
+.titulo {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #8e44ad;
+    margin-bottom: 10px;
+}
+
+/* Descrição da tarefa */
+.descricao {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 10px;
+    margin-bottom: 50px; /* Adicionando espaço para os botões */
+}
+
+/* Botões Deletar e Editar */
+.button-left,
+.button-right {
+    position: absolute;
+    bottom: 20px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Botão Esquerda */
+.button-left {
+    left: 20px;
+    background-color: #3498db;
+    color: #fff;
+}
+
+.button-left:hover {
+    background-color: #2980b9;
+}
+
+/* Botão Direita */
+.button-right {
+    right: 20px;
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.button-right:hover {
+    background-color: #c0392b;
+}
+
+.button-left button,
+.button-right button {
+    width: 100%; /* Faz o botão ocupar toda a largura da div */
+    height: 100%; /* Faz o botão ocupar toda a altura da div */
+    padding: 10px 0; /* Ajusta o padding para garantir o botão ficar confortável */
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    color: #fff; /* Garantir que o texto do botão seja branco */
+    transition: background-color 0.3s ease;
+}
+
+/* Botão Esquerda (Deletar) */
+.button-left button {
+    background-color: #3498db;
+}
+
+.button-left button:hover {
+    background-color: #2980b9;
+}
+
+/* Botão Direita (Editar) */
+.button-right button {
+    background-color: #e74c3c;
+}
+
+.button-right button:hover {
+    background-color: #c0392b;
+}
+
+/* Estilo para o botão ao ser focado */
+.button-left button:focus,
+.button-right button:focus {
+    outline: none;
+}
+
+.new-task {
+    background-color: #ffffff00;
+    border: solid 0.5px #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    height: 250px; /* Altura fixa para o card */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinha o conteúdo na parte superior */
+    align-items: center; /* Centraliza horizontalmente */
+}
+
+.new-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 10px; /* Espaço entre o título e o ícone */
+}
+
+.icon-wrapper {
+    display: flex;
+    justify-content: center; /* Centraliza a div que contém o ícone horizontalmente */
+    align-items: center; /* Centraliza a div que contém o ícone verticalmente */
+    height: 100%; /* Preenche a altura da div */
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center; /* Centraliza o ícone horizontalmente */
+    align-items: center; /* Centraliza o ícone verticalmente */
+}
+
+.icon-container a i {
+    padding: 10px; 
+    border-radius: 100%;
+    border: solid 0.5px #fff;
+    background-color: #ffffff00;
+    font-size: 30px; /* Tamanho do ícone */
+    color: #ffffff;  /* Cor do ícone */
+}
+
+.icon-container a i:hover {
+    cursor: pointer;
+}
