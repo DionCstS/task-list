@@ -30,6 +30,12 @@
             $stmt = $this->conn->prepare("UPDATE tarefas SET titulo = :titulo, descricao = :descricao WHERE id = :id");
             $stmt->execute([":id" => $id, ":titulo" => $titulo, ":descricao" => $descricao]);
         }
+
+        public function listarTarefas(){
+            $stmt = $this->conn->prepare("SELECT * FROM tarefas");
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
     }
 
 ?>

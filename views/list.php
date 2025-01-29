@@ -2,16 +2,8 @@
     require __DIR__ . '/../classes/GerenciadorTarefas.php';
 
     $conected = new GerenciadorTarefas();
-
-    $stmt = $conn->prepare("SELECT * FROM tarefas");
-    $stmt->execute();
-
-    $tarefas = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    // foreach($tarefas as $tarefa)
-    // {
-    //     echo $tarefa['titulo'] . '<br>', $tarefa['descricao'] . '<br>';
-    // }
+    $tarefas = $conected->listarTarefas();
+    
 ?>
 
 <!DOCTYPE html>
